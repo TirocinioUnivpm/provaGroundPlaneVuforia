@@ -29,7 +29,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
    // public UnityEngine.UI.Toggle m_GroundToggle;// m_MidAirToggle;
    // public UnityEngine.UI.Button m_ResetButton;
     public CanvasGroup m_GroundReticle;
-    public GameObject imageTarget;
+    public GameObject cube;
     #endregion // PUBLIC_MEMBERS
 
 
@@ -192,11 +192,14 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
 
     private void RotateTowardImageTarget(GameObject augmentation)
     {
-        var lookAtPosition = mainCamera.transform.position - augmentation.transform.position;
-         lookAtPosition.y = 0;
+        //var lookAtPosition = cube.transform.position - augmentation.transform.position;
+        //lookAtPosition.y = 0;
+
         //var lookAtPositionTarget = imageTarget.transform.position;
-        var rotation = Quaternion.LookRotation(lookAtPosition);
-    
+        //var rotation = Quaternion.LookRotation(lookAtPosition);
+        var rotation = cube.transform.rotation;
+        rotation.x = 0;
+
         augmentation.transform.rotation = rotation;
     }
 
@@ -358,11 +361,14 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
 
             if (!primo)
             {
-                Vector2 screenPoint = mainCamera.WorldToScreenPoint(imageTrackable.transform.position);
-                
-                screenPoint.x = screenPoint.x + 500;
-                screenPoint.y = screenPoint.y + 500;
+
+                //Vector2 screenPoint = mainCamera.WorldToScreenPoint(imageTrackable.transform.position);
+                Vector2 screenPoint = mainCamera.WorldToScreenPoint(cube.transform.position);
+                //screenPoint.x = screenPoint.x + 500;
+                //screenPoint.y = screenPoint.y + 500;
                 m_PlaneFinder.PerformHitTest(screenPoint);
+                cube.SetActive(false);
+
                // m_GroundToggle.isOn = true;
                 primo = true;
            }
