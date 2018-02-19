@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "provaGroundPlaneVuforia", "provaGroundPlaneVuforia.csproj", "{C9D33C08-BD15-E825-B903-B8325FFAB1CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "provaGroundPlaneVuforia.Editor", "provaGroundPlaneVuforia.Editor.csproj", "{70BE419F-86D9-5939-4022-4958B6E71476}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9D33C08-BD15-E825-B903-B8325FFAB1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D33C08-BD15-E825-B903-B8325FFAB1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D33C08-BD15-E825-B903-B8325FFAB1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D33C08-BD15-E825-B903-B8325FFAB1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70BE419F-86D9-5939-4022-4958B6E71476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BE419F-86D9-5939-4022-4958B6E71476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BE419F-86D9-5939-4022-4958B6E71476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BE419F-86D9-5939-4022-4958B6E71476}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
