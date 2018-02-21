@@ -27,9 +27,10 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
     public UnityEngine.UI.Text m_OnScreenMessage;
     public UnityEngine.UI.Image m_PlaneModeIcon;
    // public UnityEngine.UI.Toggle m_GroundToggle;// m_MidAirToggle;
-   // public UnityEngine.UI.Button m_ResetButton;
+    //public UnityEngine.UI.Button m_ResetButton;
     public CanvasGroup m_GroundReticle;
     public GameObject cube;
+    public GameObject Buttonreset;
     #endregion // PUBLIC_MEMBERS
 
 
@@ -59,6 +60,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
         VuforiaARController.Instance.RegisterOnPauseCallback(OnVuforiaPaused);
         DeviceTrackerARController.Instance.RegisterTrackerStartedCallback(OnTrackerStarted);
         DeviceTrackerARController.Instance.RegisterDevicePoseStatusChangedCallback(OnDevicePoseStatusChanged);
+        m_PlaneFinder.enabled = false;
 
         m_TitleMode.text = TITLE_GROUNDPLANE;
         m_PlaneFinder.HitTestMode = HitTestMode.INTERACTIVE;
@@ -266,7 +268,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
                     m_PlaneAugmentation.SetActive(true);
                 }
 
-                //Debug.Log("Positioning Plane Augmentation at: " + result.Position);
+                Debug.Log("Positioning Plane Augmentation at: " + result.Position);
                 m_PlaneAugmentation.PositionAt(cube.transform.position);
                 RotateTowardImageTarget(m_PlaneAugmentation);
 
@@ -342,12 +344,13 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
         m_PlaneAugmentation.transform.position = Vector3.zero;
         m_PlaneAugmentation.transform.localEulerAngles = Vector3.zero;
         m_PlaneAugmentation.SetActive(false);
-       // m_MidAirAugmentation.transform.position = Vector3.zero;
-       // m_MidAirAugmentation.transform.localEulerAngles = Vector3.zero;
-      //  m_MidAirAugmentation.SetActive(false);
+        Buttonreset.SetActive(false);
+        // m_MidAirAugmentation.transform.position = Vector3.zero;
+        // m_MidAirAugmentation.transform.localEulerAngles = Vector3.zero;
+        //  m_MidAirAugmentation.SetActive(false);
 
         // reset buttons
-       // m_GroundToggle.isOn = true;
+        // m_GroundToggle.isOn = true;
         //m_MidAirToggle.interactable = false;
         //m_ResetButton.interactable = false;
         primo = false;
@@ -368,13 +371,15 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
 
             if (!primo)
             {
-
+                Buttonreset.SetActive(true);
+                m_PlaneFinder.enabled = true;
                 //Vector2 screenPoint = mainCamera.WorldToScreenPoint(imageTrackable.transform.position);
-                  Vector2 screenPoint;
+                Vector2 screenPoint;
                   screenPoint=mainCamera.WorldToScreenPoint(cube.transform.position);
                 //screenPoint.x = screenPoint.x + 500;
                 //screenPoint.y = screenPoint.y + 500;
                   m_PlaneFinder.PerformHitTest(screenPoint);
+                m_PlaneFinder.enabled = false;
 
                // m_PlaneAugmentation.transform.position = cube.transform.position;
               //  m_PlaneAugmentation.transform.localPosition = Vector3.zero;
@@ -384,7 +389,11 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
                 Debug.Log("Trackable found first time");
                 // m_GroundToggle.isOn = true;
                 primo = true;
-           }
+            }
+            else
+            {
+                primo = false;
+            }
         }
     }
     #endregion // IMAGE_TRACKER_CALLBACKS
