@@ -11,8 +11,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: testluca
+  companyName: GroundPlaneVuforia
+  productName: testCax
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: GroundPlaneVuforia.testluca
+    Android: GroundPlaneVuforia.testCax
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
@@ -655,9 +655,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: b372c162-2539-4d21-aa1a-46ecfdc25048
-  projectName: testluca
-  organizationId: lucaquercetti
+  cloudProjectId: 3f995feb-2090-44e8-ac98-ff6264c9a16d
+  projectName: testCax
+  organizationId: eliasdjpizza-hotmail-it
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

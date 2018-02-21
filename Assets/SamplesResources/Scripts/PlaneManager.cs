@@ -68,7 +68,9 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
       //  m_ResetButton.interactable = false;
 
         m_IconGroundMode = Resources.Load<Sprite>("icon_ground_mode");
-       // m_IconMidAirMode = Resources.Load<Sprite>("icon_midair_mode");
+        // m_IconMidAirMode = Resources.Load<Sprite>("icon_midair_mode");
+
+        
 
         mainCamera = Camera.main;
     }
@@ -199,6 +201,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
         //var rotation = Quaternion.LookRotation(lookAtPosition);
         var rotation = cube.transform.rotation;
         rotation.x = 0;
+        rotation.z = 0;
 
         augmentation.transform.rotation = rotation;
     }
@@ -238,6 +241,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
 
                 if (positionalDeviceTracker != null && positionalDeviceTracker.IsActive)
                 {
+                    
                     DestroyAnchors();
 
                     contentPositioningBehaviour = m_PlaneFinder.GetComponent<ContentPositioningBehaviour>();
@@ -257,11 +261,13 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
                 {
                     Debug.Log("Setting Plane Augmentation to Active");
                     // On initial run, unhide the augmentation
+                    m_PlaneAugmentation.transform.localPosition = Vector3.zero;
+                   // m_PlaneAugmentation.transform.rotation = Quaternion.identity;
                     m_PlaneAugmentation.SetActive(true);
                 }
 
-                Debug.Log("Positioning Plane Augmentation at: " + result.Position);
-                m_PlaneAugmentation.PositionAt(result.Position);
+                //Debug.Log("Positioning Plane Augmentation at: " + result.Position);
+                m_PlaneAugmentation.PositionAt(cube.transform.position);
                 RotateTowardImageTarget(m_PlaneAugmentation);
 
                 break;
@@ -311,7 +317,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
             planeMode = PlaneMode.GROUND;
             m_TitleMode.text = TITLE_GROUNDPLANE;
             m_PlaneModeIcon.sprite = m_IconGroundMode;
-            m_PlaneFinder.gameObject.SetActive(true);
+           // m_PlaneFinder.gameObject.SetActive(true);
           //  m_MidAirPositioner.gameObject.SetActive(false);
         }
     }
@@ -357,19 +363,26 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
-            Debug.Log("Trackable " + imageTrackable.TrackableName + " found");
+           // Debug.Log("Trackable " + imageTrackable.TrackableName + " found");
+           
 
             if (!primo)
             {
 
                 //Vector2 screenPoint = mainCamera.WorldToScreenPoint(imageTrackable.transform.position);
-                Vector2 screenPoint = mainCamera.WorldToScreenPoint(cube.transform.position);
+                  Vector2 screenPoint;
+                  screenPoint=mainCamera.WorldToScreenPoint(cube.transform.position);
                 //screenPoint.x = screenPoint.x + 500;
                 //screenPoint.y = screenPoint.y + 500;
-                m_PlaneFinder.PerformHitTest(screenPoint);
-                cube.SetActive(false);
+                  m_PlaneFinder.PerformHitTest(screenPoint);
 
-               // m_GroundToggle.isOn = true;
+               // m_PlaneAugmentation.transform.position = cube.transform.position;
+              //  m_PlaneAugmentation.transform.localPosition = Vector3.zero;
+              //  m_PlaneAugmentation.transform.rotation = Quaternion.identity;
+              //  m_PlaneAugmentation.SetActive(true);
+                cube.SetActive(false);
+                Debug.Log("Trackable found first time");
+                // m_GroundToggle.isOn = true;
                 primo = true;
            }
         }
