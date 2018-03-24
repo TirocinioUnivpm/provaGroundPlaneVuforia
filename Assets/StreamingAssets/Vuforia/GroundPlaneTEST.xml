@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="elettromagnetismoGialbe" size="0.300000 0.427800" />
+    <ImageTarget name="cartelloUnivpm" size="10.000000 7.500000" />
     <ImageTarget name="fisica_errori" size="10.000000 14.212679" />
     <ImageTarget name="TargetAerosol" size="10.000000 7.502117" />
     <ImageTarget name="fisica" size="10.000000 14.630000" />
