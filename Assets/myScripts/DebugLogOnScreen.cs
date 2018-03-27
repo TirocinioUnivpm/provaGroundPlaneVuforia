@@ -24,7 +24,7 @@ public class DebugLogOnScreen: MonoBehaviour
     {
         if (textMesh.text.Length > 300)
         {
-            textMesh.text = message + "\n";
+            textMesh.text = "\n "+ message + "\n";
         }
         else
         {

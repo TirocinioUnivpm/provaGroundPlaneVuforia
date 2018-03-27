@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour {
-    
-	// Use this for initialization
-	void Start () {
-		
-	}
+   
+
+
+    // Use this for initialization
+    void Start () {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -16,20 +18,33 @@ public class ChangeScene : MonoBehaviour {
 	}
 public void  ScenaBotteghe() {
       
-        SceneManager.LoadScene("scenaBotteghe",LoadSceneMode.Single);
-}
+        SceneManager.LoadSceneAsync("scenaBotteghe",LoadSceneMode.Single);
+
+
+
+    }
     public void ScenaMosaico()
     {
 
-        SceneManager.LoadScene("scenaMosaico", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("scenaMosaico", LoadSceneMode.Single);
     }
 
     public void ScenaMenu() {
-        SceneManager.LoadScene("menu", LoadSceneMode.Single);
+        
+        SceneManager.LoadSceneAsync("menu", LoadSceneMode.Single);
+       
 
 
     }
 
+    public void ScenaCar()
+    {
+        SceneManager.LoadSceneAsync("freeCar", LoadSceneMode.Single);
+        
+
+    }
+
+    
     public void Esci()
     {
         Application.Quit();
