@@ -55,7 +55,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
         VuforiaARController.Instance.RegisterVuforiaStartedCallback(OnVuforiaStarted);
         VuforiaARController.Instance.RegisterOnPauseCallback(OnVuforiaPaused);
         DeviceTrackerARController.Instance.RegisterTrackerStartedCallback(OnTrackerStarted);
-        DeviceTrackerARController.Instance.RegisterDevicePoseStatusChangedCallback(OnDevicePoseStatusChanged);
+       DeviceTrackerARController.Instance.RegisterDevicePoseStatusChangedCallback(OnDevicePoseStatusChanged);
         m_PlaneFinder.HitTestMode = HitTestMode.AUTOMATIC;
       // m_ResetButton.interactable = false;
         mainCamera = Camera.main;
@@ -80,8 +80,9 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
     {
         Debug.Log("OnVuforiaStarted() called.");
 
-        stateManager = TrackerManager.Instance.GetStateManager();
       imageTrackable.RegisterTrackableEventHandler(this);
+      stateManager = TrackerManager.Instance.GetStateManager();
+      
        
     }
 
@@ -153,6 +154,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
     #region PUBLIC_METHODS
     public void HandleAutomaticHitTest(HitTestResult result)
     {
+        if (primo) return;
         Debug.Log("Result: " + result.Position);
 
        // AutomaticHitTestFrameCount = Time.frameCount;
@@ -258,8 +260,9 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
-            mainCamera.transform.rotation = new Quaternion(0, 0, 0,0);
+
             
+
 
             if (!primo)
             {
@@ -267,7 +270,7 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
                 //if (!m_ResetButton) m_ResetButton.interactable = true;
                 Vector2 screenPoint;
               
-                screenPoint = mainCamera.WorldToScreenPoint(imageTrackable.transform.position);
+                screenPoint = mainCamera.WorldToScreenPoint(cube.transform.position);
                 Debug.Log(screenPoint);
 
                 m_PlaneFinder.PerformHitTest(screenPoint);

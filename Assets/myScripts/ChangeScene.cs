@@ -18,7 +18,7 @@ public class ChangeScene : MonoBehaviour {
 	}
 public void  ScenaBotteghe() {
       
-        SceneManager.LoadSceneAsync("scenaBotteghe",LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("BOTTEGHE_scene",LoadSceneMode.Single);
 
 
 
@@ -26,7 +26,7 @@ public void  ScenaBotteghe() {
     public void ScenaMosaico()
     {
 
-        SceneManager.LoadSceneAsync("scenaMosaico", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("MOSAICO_scene", LoadSceneMode.Single);
     }
 
     public void ScenaMenu() {
@@ -36,15 +36,18 @@ public void  ScenaBotteghe() {
 
 
     }
-
-    public void ScenaCar()
+    public void ScenaAnfiteatro()
     {
-        SceneManager.LoadSceneAsync("freeCar", LoadSceneMode.Single);
-        
+
+        SceneManager.LoadSceneAsync("ANFITEATRO_scene", LoadSceneMode.Single);
+
+
 
     }
 
-    
+
+
+
     public void Esci()
     {
         Application.Quit();

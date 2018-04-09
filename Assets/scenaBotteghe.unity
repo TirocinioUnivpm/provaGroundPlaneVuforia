@@ -892,7 +892,7 @@ Transform:
   m_GameObject: {fileID: 341416436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 60, y: 60, z: 60}
   m_Children:
   - {fileID: 1908681707}
   - {fileID: 1105174167}
@@ -1569,7 +1569,7 @@ Transform:
   m_GameObject: {fileID: 940448621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.05, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1856455633}
   m_RootOrder: 0
@@ -2137,8 +2137,8 @@ MonoBehaviour:
   mExtendedTracking: 0
   mAspectRatio: 1.4212679
   mImageTargetType: 0
-  mWidth: 0.7035971
-  mHeight: 1
+  mWidth: 0.21107915
+  mHeight: 0.3
 --- !u!33 &1856455629
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2210,7 +2210,7 @@ Transform:
   m_GameObject: {fileID: 1856455627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 940448625}
   m_Father: {fileID: 0}

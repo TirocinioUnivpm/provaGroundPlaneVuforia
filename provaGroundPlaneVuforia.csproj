@@ -316,7 +316,9 @@
     <Compile Include="Assets\myScripts\ChangeScene.cs" />
     <Compile Include="Assets\myScripts\DebugLogOnScreen.cs" />
     <Compile Include="Assets\myScripts\DeployStageOnce.cs" />
+    <Compile Include="Assets\myScripts\GroundPlaneTrackableEventHandler.cs" />
     <Compile Include="Assets\myScripts\ImageTargetTrackable.cs" />
+    <Compile Include="Assets\myScripts\PlaceContentFromImageTarget.cs" />
     <Compile Include="Assets\myScripts\stoVuforia.cs" />
     <Compile Include="Assets\SamplesResources\Scripts\AboutManager.cs" />
     <Compile Include="Assets\SamplesResources\Scripts\PlaneManager.cs" />
