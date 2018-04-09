@@ -498,7 +498,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.35063115, y: 0, z: 0.5}
+      m_Extent: {x: 0.35179856, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -551,7 +551,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: ed85b3be00000000000000bf000000000000803f000000000000000000000000ed85b3be000000000000003f000000000000803f00000000000000000000803fed85b33e00000000000000bf000000000000803f000000000000803f00000000ed85b33e000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: f11eb4be00000000000000bf000000000000803f000000000000000000000000f11eb4be000000000000003f000000000000803f00000000000000000000803ff11eb43e00000000000000bf000000000000803f000000000000803f00000000f11eb43e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -1094,7 +1094,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2bdb51eca77174a4c89717831242e394, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300034, guid: 2bdb51eca77174a4c89717831242e394, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1258,15 +1258,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2bdb51eca77174a4c89717831242e394, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2bdb51eca77174a4c89717831242e394, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2bdb51eca77174a4c89717831242e394, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bdb51eca77174a4c89717831242e394, type: 3}
@@ -1277,7 +1277,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: elettromagnetismoGialbeMaterial
+  m_Name: fisica_erroriMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1290,7 +1290,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: aba61cc96e12440f8134e91ec619067e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 37ff0279d608427881d8c666341f19d5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1567,13 +1567,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 940448621}
-  m_LocalRotation: {x: 0.27059805, y: 0.6532815, z: -0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 4.51, y: -4.86, z: -0.16}
-  m_LocalScale: {x: 1, y: 1, z: 13.875196}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1856455633}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076099953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,15 +2130,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: elettromagnetismoGialbe
+  mTrackableName: fisica_errori
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/GroundPlaneTEST.xml
   mExtendedTracking: 0
-  mAspectRatio: 1.426
+  mAspectRatio: 1.4212679
   mImageTargetType: 0
-  mWidth: 0.3
-  mHeight: 0.4278
+  mWidth: 0.7035971
+  mHeight: 1
 --- !u!33 &1856455629
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2208,14 +2208,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1856455627}
-  m_LocalRotation: {x: 0, y: 0.92387956, z: 0.38268343, w: 0}
-  m_LocalPosition: {x: -0.011, y: 1.3503, z: 2.845}
-  m_LocalScale: {x: 0.4278, y: 0.4278, z: 0.4278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 940448625}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -45, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1856455634
 MonoBehaviour:
   m_ObjectHideFlags: 0

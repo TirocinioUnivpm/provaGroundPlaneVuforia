@@ -132,10 +132,10 @@ public class PlaneManager : MonoBehaviour, ITrackableEventHandler
    
     private void RotateTowardImageTarget(GameObject augmentation)
     {
-        var lookAtPosition = cube.transform.position;
-         //lookAtPosition.y = 0;
+        //var lookAtPosition = cube.transform.position;
+        //lookAtPosition.y = 0;
 
-        var rotation = Quaternion.LookRotation(lookAtPosition);
+        var rotation = cube.transform.rotation;
    
         Debug.Log("rotateToward");
         rotation.y +=angoloY;
